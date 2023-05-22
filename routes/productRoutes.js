@@ -44,10 +44,10 @@ router.get("/get-product", getProductController);
 router.get("/get-product/:slug", getSingleProductController);
 
 //get photo
-router.get("/product-photo/:pid", productPhotoController);
+router.get("/product-photo/:id", productPhotoController);
 
 //delete rproduct
-router.delete("/product/:id", deleteProductController);
+router.delete("/delete-product/:id", deleteProductController);
 // filter product
 router.post("/product-filters", productFiltersController);
 
