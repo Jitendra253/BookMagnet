@@ -8,7 +8,6 @@ import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import cors from 'cors'
 import path from 'path'
-import { dirname } from 'path';
 import { fileURLToPath } from "url";
 
 //configure env
@@ -25,7 +24,7 @@ const app = express();
 // Get current module file path
 const __filename = fileURLToPath(import.meta.url);
 // Get current module directory path
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 //middleware
 app.use(cors())
