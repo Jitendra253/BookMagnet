@@ -17,6 +17,7 @@ const Layout = ({ children, title, description, keywords, author }) => {
     minHeight: "70vh",
     paddingBlock: "2px", // giving the padding inside components of the layout 
     paddingBottom: "2px",// Adjust the value to accommodate the footer height
+    marginTop: "3rem"
   };
   const footerStyles = {
     marginTop: "auto",

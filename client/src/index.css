@@ -165,7 +165,44 @@
 }
 
 .dashboard-menu h4 {
-  background-color: #434343 !important;
+  background-color: var(--light-green) !important;
   color: white;
   padding: 20px 0px;
+}
+
+/* changing default styles */
+
+.bg-primary {
+  background-color: var(--dark-blue);
+}
+
+.btn-primary {
+  background-color: var(--teal-green);
+  border-color: var(--teal-green);
+}
+
+.btn-primary:hover {
+  background-color: var(--light-green);
+  background-color: var(--light-green);
+}
+
+.btn-secondary {
+  background-color: var(--medium-blue);
+  border-color: var(--medium-blue);
+}
+
+.btn-secondary:hover {
+  background-color: #228B22;
+  border-color: #228B22;
+}
+
+.btn-danger {
+  background-color: #FF385C;
+  border-color: #FF385C;
+  color: #FFFFFF;
+}
+
+.btn-danger:hover {
+  background-color: #FF1A45;
+  border-color: #FF1A45;
 }
