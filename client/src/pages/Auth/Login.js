@@ -3,11 +3,14 @@ import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
+import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import "../../styles/AuthStyles.css";
 import { useAuth } from "../../context/auth";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [auth, setAuth] = useAuth();
 
   const navigate = useNavigate();
@@ -38,9 +41,14 @@ const Login = () => {
       toast.error("Something went wrong");
     }
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container " style={{ minHeight: "90vh" }}>
+      <div className="form-container" style={{ minHeight: "90vh" }}>
         <form onSubmit={handleSubmit}>
           <h4 className="title">LOGIN FORM</h4>
 
@@ -52,13 +60,13 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
-              placeholder="Enter Your Email "
+              placeholder="Enter Your Email"
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3 password-input">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="form-control"
@@ -66,6 +74,9 @@ const Login = () => {
               placeholder="Enter Your Password"
               required
             />
+            <div className="password-toggle-icon" onClick={togglePasswordVisibility}>
+              {showPassword ? <RiEyeLine /> : <RiEyeOffLine />}
+            </div>
           </div>
           <div className="mb-3">
             <button
