@@ -67,6 +67,7 @@ router.get("/related-product/:pid/:cid", realtedProductController);
 router.get("/product-category/:slug", productCategoryController);
 
 //payments routes
+
 //token
 router.get("/braintree/token", braintreeTokenController);
 
