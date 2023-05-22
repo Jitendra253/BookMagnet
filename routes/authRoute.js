@@ -40,11 +40,11 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
 router.put("/profile", requireSignIn, updateProfileController);
 
 //ORDERS
-router.get('./orders', requireSignIn, getOrdersController)
+router.get('/orders', requireSignIn, getOrdersController)
 //ORDERS
-router.get('./all-orders', requireSignIn, isAdmin, getAllOrdersController)
+router.get('/all-orders', requireSignIn, isAdmin, getAllOrdersController)
 
 //status upsata
-router.put("./order-status/:orderId", requireSignIn, isAdmin, orderStatusController)
+router.put("/order-status/:orderId", requireSignIn, isAdmin, orderStatusController)
 
 export default router;
