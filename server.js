@@ -16,22 +16,20 @@ dotenv.config();
 //database config
 connectDB();
 
-//rest object
-const app = express();
-
-
 //es module fix
 // Get current module file path
 const __filename = fileURLToPath(import.meta.url);
 // Get current module directory path
 const __dirname = path.dirname(__filename);
+//rest object
+const app = express();
 
 //middleware
 app.use(cors())
 app.use(express.json());
 app.use(morgan("dev"));
 // Link react application path
-app.use(express.static(path.join('./client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 
 //routes
@@ -46,7 +44,7 @@ app.use("/api/v1/product", productRoutes)
 
 // Display our react file
 app.get('*', function (req, res) {
-  res.sendFile(path.join('./client/build/index.html'));
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
 
