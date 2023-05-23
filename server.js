@@ -29,7 +29,7 @@ app.use(cors())
 app.use(express.json());
 app.use(morgan("dev"));
 // Link react application path
-app.use(express.static(path.join(__dirname, './client/build')));
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 
 //routes
