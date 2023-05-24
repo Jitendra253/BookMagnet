@@ -29,7 +29,7 @@ app.use(cors())
 app.use(express.json());
 app.use(morgan("dev"));
 // Link react application path
-app.use(express.static(path.resolve(__dirname, './client/build')));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 
 //routes
@@ -44,7 +44,7 @@ app.use("/api/v1/product", productRoutes)
 
 // Display our react file
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname, './client/build/index.html'));
+  res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
 });
 
 
